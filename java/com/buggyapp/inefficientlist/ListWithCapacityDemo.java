@@ -10,8 +10,16 @@ public class ListWithCapacityDemo {
 
 	private static List<List<String>> parentList = new ArrayList<>(MAX_ELEMENTS);
 	
-	public static void main(String args[]) {
+	/**
+	 * 启动带初始容量List演示
+	 * 演示ArrayList指定初始容量时的性能优势
+	 */
+	public static void start() {
 		
+		System.out.println("Starting List With Capacity Demo...");
+		System.out.println("Creating " + MAX_ELEMENTS + " ArrayLists with initial capacity...");
+		
+		long startTime = System.currentTimeMillis();
 		int counter = 0;		
 		while (counter++ < MAX_ELEMENTS) {
 		
@@ -19,6 +27,14 @@ public class ListWithCapacityDemo {
 			childList.add(DEMO_STRING);
 			
 			parentList.add(childList);
-		}		
+		}
+		
+		long duration = System.currentTimeMillis() - startTime;
+		System.out.println("Completed in " + duration + " ms");
+		System.out.println("Total elements: " + parentList.size());
+	}
+	
+	public static void main(String args[]) {
+		start();
 	}
 }

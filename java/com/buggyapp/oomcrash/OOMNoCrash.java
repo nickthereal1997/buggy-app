@@ -9,8 +9,11 @@ import java.util.Map;
  */
 public class OOMNoCrash {
 
-	
-	public static void main(String args[]) throws Exception {
+	/**
+	 * 启动捕获OOM但不崩溃演示
+	 * 捕获OutOfMemoryError后应用程序继续运行
+	 */
+	public static void start() throws Exception {
 		
 		try {
 			
@@ -36,5 +39,9 @@ public class OOMNoCrash {
 	public static void doSomework() {
 		
 		System.out.println("2 + 2 = " + (2 + 2));
+	}
+	
+	public static void main(String args[]) throws Exception {
+		start();
 	}
 }

@@ -8,7 +8,11 @@ import java.util.UUID;
  */
 public class LimitlessArray {
 
-	public static void main(String[] args) {
+	/**
+	 * 启动超大数组OOM演示
+	 * 尝试分配超大数组直接导致OutOfMemoryError
+	 */
+	public static void start() {
 		  
 	    System.out.println("The begining");
 	    String[] bla = new String[800000000]; //crashes-right away
@@ -20,6 +24,9 @@ public class LimitlessArray {
 	    }
 	    
 	    System.out.println("The end");
-	 
-	}	
+	}
+	
+	public static void main(String[] args) {
+		start();
+	}
 }

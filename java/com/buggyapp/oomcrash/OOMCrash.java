@@ -9,8 +9,11 @@ import java.util.Map;
  */
 public class OOMCrash {
 
-	
-	public static void main(String args[]) {
+	/**
+	 * 启动OOM崩溃演示
+	 * 通过无限向HashMap添加元素导致OutOfMemoryError
+	 */
+	public static void start() {
 		
 		Map<String, String> map = new HashMap<>();
 			
@@ -24,6 +27,9 @@ public class OOMCrash {
 				System.out.println("Added " + counter + " elements");
 			}
 		}
-		
+	}
+	
+	public static void main(String args[]) {
+		start();
 	}
 }
